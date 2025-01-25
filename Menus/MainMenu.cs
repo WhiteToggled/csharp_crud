@@ -8,7 +8,7 @@ namespace LmsApp.Menus
         private readonly string[] options = {
             "1. Student Management",
             "2. Course Management",
-            "3. Registration Management",
+            "3. Enrollment Management",
             "4. Attendance Management",
             "5. Exit",
         };
@@ -29,8 +29,7 @@ namespace LmsApp.Menus
                         new CourseMenu().display();
                         break;
                     case '3':
-                        Console.WriteLine("Registration");
-                        // new RegistrationMenu().display();
+                        new EnrollmentsMenu().display();
                         break;
                     case '4':
                         Console.WriteLine("AttendanceMenul");
