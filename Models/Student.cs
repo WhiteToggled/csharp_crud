@@ -1,11 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace LmsApp {
-    public class Student {
+namespace LmsApp.Models
+{
+    public class Student
+    {
         public string RegNo { get; set; }
         public string Name { get; set; }
         public string Department { get; set; }
@@ -13,7 +11,8 @@ namespace LmsApp {
         public float Cgpa { get; set; }
         public string Address { get; set; }
 
-        public Student(string regNo, string name = null, string department = null, int session = 0, float cgpa = 0.0f, string address = null) {
+        public Student(string regNo, string name = null, string department = null, int session = 0, float cgpa = 0.0f, string address = null)
+        {
             RegNo = regNo;
             Name = name;
             Department = department;
@@ -22,25 +21,30 @@ namespace LmsApp {
             Address = address;
         }
 
-        public void AddStudent() {
+        public void AddStudent()
+        {
             string query = $"INSERT INTO Student VALUES ('{RegNo}', '{Name}', '{Department}', {Session}, {Cgpa}, '{Address}')";
             DatabaseHelper.Instance.Update(query);
         }
 
-        public void EditStudent() {
+        public void EditStudent()
+        {
             string query = $"UPDATE Student SET Name = '{Name}', CGPA = {Cgpa} WHERE RegNo = '{RegNo}'";
             DatabaseHelper.Instance.Update(query);
         }
 
-        public void DeleteStudent() {
+        public void DeleteStudent()
+        {
             string query = $"DELETE FROM Student WHERE RegNo = '{RegNo}'";
             DatabaseHelper.Instance.Update(query);
         }
 
-        public void SearchStudent() {
+        public void SearchStudent()
+        {
             string query = $"SELECT * FROM Student WHERE RegNo = '{RegNo}'";
             var reader = DatabaseHelper.Instance.getData(query);
-            if (reader.Read()) {
+            if (reader.Read())
+            {
                 Console.WriteLine($"{reader["RegNo"]} - {reader["Name"]} - {reader["Department"]} - {reader["Session"]} - {reader["Cgpa"]} - {reader["Address"]}");
             }
             else
