@@ -1,17 +1,25 @@
 using MySql.Data.MySqlClient;
+using dotenv.net;
 using System;
 
-namespace LmsApp
+namespace LmsApp.Helpers
 {
     public class DatabaseHelper
     {
-        private String serverName = "127.0.0.1";
-        private String port = "3306";
-        private String databaseName = "";
-        private String databaseUser = "";
-        private String databasePassword = "";
+        private readonly String serverName = "";
+        private readonly String port = "";
+        private readonly String databaseName = "";
+        private readonly String databaseUser = "";
+        private readonly String databasePassword = "";
 
-        private DatabaseHelper() { }
+        private DatabaseHelper() {
+            DotEnv.Load();
+            serverName = Environment.GetEnvironmentVariable("SERVER_NAME") ?? "";
+            port = Environment.GetEnvironmentVariable("SERVER_PORT") ?? "";
+            databaseName = Environment.GetEnvironmentVariable("DB_NAME") ?? "";
+            databaseUser = Environment.GetEnvironmentVariable("DB_USER") ?? "";
+            databasePassword = Environment.GetEnvironmentVariable("DB_PASS") ?? "";
+        }
 
         private static DatabaseHelper _instance;
         public static DatabaseHelper Instance
