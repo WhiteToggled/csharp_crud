@@ -39,7 +39,7 @@ namespace LmsApp.Menus
                         Console.Read();
                         break;
                     case '5':
-                        viewAllStudents();
+                        Student.ShowStudents();
                         Console.WriteLine("Press any key to continue . . ");
                         Console.Read();
                         break;
@@ -103,12 +103,6 @@ namespace LmsApp.Menus
 
             Student student = new Student(regNo);
             student.SearchStudent();
-        }
-
-        private void viewAllStudents()
-        {
-            Student student = new Student("");
-            student.ShowStudents();
         }
     }
 }
