@@ -32,8 +32,7 @@ namespace LmsApp.Menus
                         new EnrollmentsMenu().display();
                         break;
                     case '4':
-                        Console.WriteLine("AttendanceMenul");
-                        // new AttendanceMenu().display();
+                        new AttendanceMenu().display();
                         break;
                     case '5':
                         Console.WriteLine("Exiting...");

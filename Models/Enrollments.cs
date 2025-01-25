@@ -1,4 +1,5 @@
 using System;
+using LmsApp.Helpers;
 
 namespace LmsApp.Models
 {
@@ -25,7 +26,7 @@ namespace LmsApp.Models
             DatabaseHelper.Instance.Update(query);
         }
 
-        public void ShowEnrollments()
+        public static void ShowEnrollments()
         {
             string query = "SELECT * FROM Enrollments";
             var reader = DatabaseHelper.Instance.getData(query);

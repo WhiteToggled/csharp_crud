@@ -29,7 +29,7 @@ namespace LmsApp.Menus
                         unenrollStudent();
                         break;
                     case '3':
-                        viewAllEnrollments();
+                        Enrollments.ShowEnrollments();
                         Console.WriteLine("Press any key to continue . . ");
                         Console.Read();
                         break;
@@ -62,12 +62,6 @@ namespace LmsApp.Menus
             Enrollments enrollment = new Enrollments(studentRegNo, courseID);
             enrollment.UnenrollStudent();
             Console.WriteLine("Student successfully unenrolled.");
-        }
-
-        private void viewAllEnrollments()
-        {
-            Enrollments enrollments = new Enrollments("", "");
-            enrollments.ShowEnrollments();
         }
     }
 }

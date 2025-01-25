@@ -1,4 +1,5 @@
 using System;
+using LmsApp.Helpers;
 
 namespace LmsApp.Models
 {
@@ -54,7 +55,7 @@ namespace LmsApp.Models
             }
         }
 
-        public void ShowStudents()
+        public static void ShowStudents()
         {
             string query = "SELECT * FROM Student";
             var reader = DatabaseHelper.Instance.getData(query);

@@ -33,7 +33,7 @@ namespace LmsApp.Menus
                         deleteCourse();
                         break;
                     case '4':
-                        viewAllCourses();
+                        Course.ShowCourses();
                         Console.WriteLine("Press any key to continue . . ");
                         Console.Read();
                         break;
@@ -76,12 +76,6 @@ namespace LmsApp.Menus
             Course course = new Course(id);
             course.DeleteCourse();
             Console.WriteLine("Course deleted successfully.");
-        }
-
-        private void viewAllCourses()
-        {
-            Course course = new Course("");
-            course.ShowCourses();
         }
     }
 }
