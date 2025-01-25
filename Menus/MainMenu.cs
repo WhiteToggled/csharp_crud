@@ -26,8 +26,7 @@ namespace LmsApp.Menus
                         new StudentMenu().display();
                         break;
                     case '2':
-                        Console.WriteLine("Course");
-                        // new CourseMenu().display();
+                        new CourseMenu().display();
                         break;
                     case '3':
                         Console.WriteLine("Registration");
