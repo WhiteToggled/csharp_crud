@@ -1,10 +1,5 @@
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Tls;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LmsApp
 {
@@ -12,9 +7,9 @@ namespace LmsApp
     {
         private String serverName = "127.0.0.1";
         private String port = "3306";
-        private String databaseName = "test";
-        private String databaseUser = "test";
-        private String databasePassword = "test";
+        private String databaseName = "";
+        private String databaseUser = "";
+        private String databasePassword = "";
 
         private DatabaseHelper() { }
 

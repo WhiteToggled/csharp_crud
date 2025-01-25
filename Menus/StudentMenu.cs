@@ -35,13 +35,18 @@ namespace LmsApp.Menus
                         break;
                     case '4':
                         searchStudent();
+                        Console.WriteLine("Press any key to continue . . ");
+                        Console.Read();
                         break;
                     case '5':
                         viewAllStudents();
+                        Console.WriteLine("Press any key to continue . . ");
+                        Console.Read();
                         break;
                     case '6':
                         return;
                 }
+                Thread.Sleep(500);
             }
         }
 
@@ -55,12 +60,10 @@ namespace LmsApp.Menus
             string department = Console.ReadLine();
             Console.Write("Enter Session: ");
             int session = int.Parse(Console.ReadLine());
-            Console.Write("Enter CGPA: ");
-            float cgpa = float.Parse(Console.ReadLine());
             Console.Write("Enter Address: ");
             string address = Console.ReadLine();
 
-            Student student = new Student(regNo, name, department, session, cgpa, address);
+            Student student = new Student(regNo, name, department, session, address);
             student.AddStudent();
             Console.WriteLine("Student added successfully.");
         }
@@ -71,10 +74,14 @@ namespace LmsApp.Menus
             string regNo = Console.ReadLine();
             Console.Write("Enter New Name: ");
             string name = Console.ReadLine();
-            Console.Write("Enter New CGPA: ");
-            float cgpa = float.Parse(Console.ReadLine());
+            Console.Write("Enter New Department: ");
+            string department = Console.ReadLine();
+            Console.Write("Enter New Session: ");
+            int session = int.Parse(Console.ReadLine());
+            Console.Write("Enter New Address: ");
+            string address = Console.ReadLine();
 
-            Student student = new Student(regNo, name, cgpa: cgpa);
+            Student student = new Student(regNo, name, department, session, address);
             student.EditStudent();
             Console.WriteLine("Student updated successfully.");
         }
@@ -91,7 +98,7 @@ namespace LmsApp.Menus
 
         private void searchStudent()
         {
-            Console.WriteLine("Enter RegNo of student to search: ");
+            Console.Write("Enter RegNo of student to search: ");
             string regNo = Console.ReadLine();
 
             Student student = new Student(regNo);

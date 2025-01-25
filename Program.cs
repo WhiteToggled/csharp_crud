@@ -9,7 +9,7 @@ namespace LmsApp
         {
             MainMenu menu = new MainMenu();
             menu.display();
-            Thread.Sleep(1);
+            Thread.Sleep(1000);
         }
     }
 }
